@@ -20,4 +20,11 @@ public class UserRigisterTestCases {
         boolean result = user.validateLastName("Dubyala");
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenEmail_whenProper_shoildReturnTrue() {
+        UserValidation user=new UserValidation();
+        boolean result=user.validateEmail("nikita5@gmail.com");
+        Assert.assertEquals(true,result);
+    }
 }
