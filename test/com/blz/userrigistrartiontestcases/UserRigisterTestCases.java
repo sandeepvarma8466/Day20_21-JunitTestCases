@@ -13,4 +13,11 @@ public class UserRigisterTestCases {
         boolean result = user.validateFirstName("Rajesh");
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenLastName_whenProper_shoildReturnTrue() {
+        UserValidation user = new UserValidation();
+        boolean result = user.validateLastName("Dubyala");
+        Assert.assertEquals(true, result);
+    }
 }
