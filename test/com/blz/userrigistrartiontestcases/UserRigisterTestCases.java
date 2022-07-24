@@ -50,4 +50,10 @@ public class UserRigisterTestCases {
         Assert.assertEquals(true, result);
     }
 
+    @Test
+    public void givenPassword4_whenProper_shoildReturnTrue() {
+        boolean result = user.validatePassword4("Khanna98@");
+        Assert.assertEquals(true, result);
+    }
+
 }
