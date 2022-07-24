@@ -16,7 +16,8 @@ public class UserRigisterTestCases {
 
     @Test
     public void givenLastName_whenProper_shoildReturnTrue() {
-        boolean result = user.validateLastName("Dubyala");
+        boolean result = user.
+                validateLastName("Dubyala");
         Assert.assertEquals(true, result);
     }
 
