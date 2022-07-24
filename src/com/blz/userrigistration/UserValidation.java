@@ -10,6 +10,7 @@ public class UserValidation {
     private static final String PHONE_NUMBER = "^[0-9]{10}";
     private static final String PASSWORD_RULE1 = "^[A-Z a-z 0-9]{8,}$";
     private static final String PASSWORD_RULE2 = "[A-Z]{1}[A-Za-z 0-9]{8,}$";
+    private static final String PASSWORD_RULE3 = "^([A-Z]+)([0-9]+)[A-Za-z0-9]{8,}$";
 
     public boolean validateFirstName(String firstName) {
         boolean isFirstNameValid = Pattern.matches(FIRST_NAME, firstName);
@@ -63,5 +64,14 @@ public class UserValidation {
             System.exit(0);
         }
         return Pattern.matches(PASSWORD_RULE2, password);
+    }
+
+    public boolean validatePassword3(String password) {
+        boolean isPasswordValid = Pattern.matches(PASSWORD_RULE3, password);
+        if (!isPasswordValid) {
+            System.out.println("Password is invalid...Please enter proper password");
+            System.exit(0);
+        }
+        return Pattern.matches(PASSWORD_RULE3, password);
     }
 }
