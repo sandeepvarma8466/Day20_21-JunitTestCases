@@ -9,8 +9,8 @@ public class UserValidation {
     private static final String EMAIL = "^[a-zA-Z0-9_-]+(?:\\.[a-zA-Z0-9_+-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
     private static final String PHONE_NUMBER = "^[0-9]{10}";
     private static final String PASSWORD_RULE1 = "^[A-Z a-z 0-9]{8,}$";
-    private static final String PASSWORD_RULE2 = "[A-Z]{1}[A-Za-z 0-9]{8,}$";
-    private static final String PASSWORD_RULE3 = "^([A-Z]+)([0-9]+)[A-Za-z0-9]{8,}$";
+    private static final String PASSWORD_RULE2 = "(?=.*[A-Z])[a-zA-Z0-9].{8,}$";
+    private static final String PASSWORD_RULE3 = "(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9].{8,}$";
 
     public boolean validateFirstName(String firstName) {
         boolean isFirstNameValid = Pattern.matches(FIRST_NAME, firstName);
