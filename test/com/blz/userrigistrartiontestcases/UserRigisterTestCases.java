@@ -37,4 +37,11 @@ public class UserRigisterTestCases {
         boolean result = user.validatePassword("yjhanna98");
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenPassword2_whenProper_shoildReturnTrue() {
+        boolean result = user.validatePassword2("Khanna98");
+        Assert.assertEquals(true, result);
+    }
+
 }
