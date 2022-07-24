@@ -8,6 +8,7 @@ public class UserValidation {
     private static final String LAST_NAME = "^[A-Z][a-z]{2,}$";
     private static final String EMAIL = "^[a-zA-Z0-9_-]+(?:\\.[a-zA-Z0-9_+-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
     private static final String PHONE_NUMBER = "^[0-9]{10}";
+    private static final String PASSWORD_RULE1 = "^[A-Z a-z 0-9]{8,}$";
 
     public boolean validateFirstName(String firstName) {
         boolean isFirstNameValid = Pattern.matches(FIRST_NAME, firstName);
@@ -43,5 +44,14 @@ public class UserValidation {
             System.exit(0);
         }
         return Pattern.matches(PHONE_NUMBER, phoneNumber);
+    }
+
+    public boolean validatePassword(String password) {
+        boolean isPasswordValid = Pattern.matches(PASSWORD_RULE1, password);
+        if (!isPasswordValid) {
+            System.out.println("Password is invalid...Please enter proper password");
+            System.exit(0);
+        }
+        return Pattern.matches(PASSWORD_RULE1, password);
     }
 }
