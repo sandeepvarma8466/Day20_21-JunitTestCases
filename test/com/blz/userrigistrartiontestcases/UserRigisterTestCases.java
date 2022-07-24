@@ -23,8 +23,15 @@ public class UserRigisterTestCases {
 
     @Test
     public void givenEmail_whenProper_shoildReturnTrue() {
-        UserValidation user=new UserValidation();
-        boolean result=user.validateEmail("nikita5@gmail.com");
-        Assert.assertEquals(true,result);
+        UserValidation user = new UserValidation();
+        boolean result = user.validateEmail("nikita5@gmail.com");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPhoneNo_whenProper_shoildReturnTrue() {
+        UserValidation user = new UserValidation();
+        boolean result = user.validatePhoneNumber("9075194765");
+        Assert.assertEquals(true, result);
     }
 }

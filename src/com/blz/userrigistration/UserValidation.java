@@ -7,6 +7,7 @@ public class UserValidation {
     private static final String FIRST_NAME = "^[A-Z][a-z]{2,}$";
     private static final String LAST_NAME = "^[A-Z][a-z]{2,}$";
     private static final String EMAIL = "^[a-zA-Z0-9_-]+(?:\\.[a-zA-Z0-9_+-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+    private static final String PHONE_NUMBER = "^[0-9]{10}";
 
     public boolean validateFirstName(String firstName) {
         boolean isFirstNameValid = Pattern.matches(FIRST_NAME, firstName);
@@ -33,5 +34,14 @@ public class UserValidation {
             System.exit(0);
         }
         return Pattern.matches(EMAIL, mail);
+    }
+
+    public boolean validatePhoneNumber(String phoneNumber) {
+        boolean isNumberValid = Pattern.matches(PHONE_NUMBER, phoneNumber);
+        if (!isNumberValid) {
+            System.out.println("Phone Number is invalid...Please enter proper phone-number");
+            System.exit(0);
+        }
+        return Pattern.matches(PHONE_NUMBER, phoneNumber);
     }
 }
